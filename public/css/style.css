@@ -1,0 +1,228 @@
+:root {
+  /* ===== Bas ===== */
+  --bg-page: #F1F5F9;          /* Sidbakgrund */
+  --bg-card: #FFFFFF;          /* Kort / paneler */
+  --bg-muted: #F1F5F9;         /* Sekundära ytor */
+
+  /* ===== Text ===== */
+  --text-primary: #1F2937;     /* Rubriker / huvudtext */
+  --text-secondary: #6B7280;   /* Beskrivningar */
+  --text-muted: #9CA3AF;       /* Placeholder / metadata */
+  --text-inverse: #FFFFFF;     /* Text på färgade knappar */
+
+  /* ===== Primär (Blå – navigation & CTA) ===== */
+  --primary-500: #2563EB;
+  --primary-600: #1D4ED8;
+  --primary-700: #1E40AF;
+  --primary-soft: #EFF6FF;
+
+  /* ===== Inkomster (Grön) ===== */
+  --success-500: #16A34A;
+  --success-600: #15803D;
+  --success-soft: #ECFDF5;
+
+  /* ===== Utgifter (Röd) ===== */
+  --danger-500: #DC2626;
+  --danger-600: #B91C1C;
+  --danger-soft: #FEF2F2;
+
+  /* ===== Info / Neutral accent ===== */
+  --info-500: #0EA5E9;
+  --info-soft: #F0F9FF;
+
+  /* ===== Borders & Divider ===== */
+  --border-light: #E5E7EB;
+  --border-muted: #CBD5E1;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.08);
+
+  /* ===== Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background-color: var(--bg-page) !important;
+  color: #1F2933;
+}
+
+.hero {
+  padding: 20px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: var(--bg-muted);
+  padding: 20px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Logo ===== */
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Navigation ===== */
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+a.nav-link:hover {
+  color: var(--primary-600) !important;
+}
+
+a.nav-link.active {
+  color: var(--primary-600) !important;
+  border-color: var(--primary-600) !important;
+  font-weight: 600;
+}
+
+
+/* ===== Actions ===== */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.button-primary {
+  background: var(--primary-500) !important;
+  color: var(--text-inverse) !important;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background: var(--primary-600) !important;
+}
+
+/* ====== Colors ===== */
+
+.text-success-500 {
+  color: var(--success-500);
+}
+
+.text-danger-500 {
+  color: var(--danger-500);
+}
+
+.text-primary-500 {
+  color: var(--primary-500);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 268px) {
+  .nav {
+    display: none;
+  }
+}
+
+.btn-brew {
+  background-color: var(--brew-copper) !important;
+  color:var(--brew-soft) !important;
+  border: solid 1px var(--brew-light) !important;
+  text-decoration: none;
+  font-weight: bold;;
+}
+
+.btn-brew a {
+    text-decoration: none;
+    color:var(--brew-light);
+}
+
+.seperator {
+    display:block;
+    height:20px;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav:first-of-type {
+        margin-top:50px;
+    }
+}
+
+.menu-img {
+  position: absolute;
+  top:13px;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+}
+
+.menu-img:hover {
+  filter: drop-shadow(0 0 12px rgba(0,0,0,0.7));
+  transform: translateX(-50%) scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+.menu-img:active {
+  transform: translateX(-50%) scale(0.98);
+  transition: transform 0.1s ease; 
+}
+
+.about {
+  background: var(--brew-beige) !important;
+  color: var(--brew-brown) !important;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+/* Snygg centrering på desktop */
+@media (min-width: 992px) {
+  .navbar-brand.position-absolute {
+    pointer-events: none; /* så man kan klicka länkar under */
+  }
+  .navbar-brand.position-absolute img {
+    pointer-events: auto; /* men loggan kan fortfarande klickas */
+  }
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
