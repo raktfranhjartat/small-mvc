@@ -18,18 +18,21 @@
 </head>
 <body data-page="<?=$pageTitle?>" class="d-flex flex-column h-100">
 
+<!-- Flash messages -->
 <?php component('ui/flash'); ?>
-    
+
+<!-- Menu -->
 <?php component('sections/menu', ['pageTitle' => $pageTitle]); ?>
 
+<!-- Main content -->
 <main class="container py-4">
   <?php require $viewFile; ?>
 </main>
 
 <!-- Footer -->
 <?php component('sections/footer', [
-    'url' => 'https://github.com/raktfranhjartat/MVC_small',
-    'title' => 'MVC Small on GitHub'
+    'url' => 'https://github.com/raktfranhjartat/small-mvc',
+    'title' => 'Small MVC on GitHub'
 ]); ?>
 
 <!-- Bootstrap JS -->
