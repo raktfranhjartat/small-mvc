@@ -6,6 +6,6 @@ class BaseModel
 
     public function __construct()
     {
-        $this->db = new Database('budget');
+        $this->db = new Database('app');
     }
 }
