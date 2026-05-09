@@ -10,4 +10,13 @@ class ErrorController extends BaseController
             'pageTitle' => 'Page Not Found'
         ]);
     }
+
+    public function viewNotFound()
+    {
+        http_response_code(500);
+
+        $this->renderView('errors/500', [
+            'pageTitle' => 'View Not Found'
+        ]);
+    }
 }

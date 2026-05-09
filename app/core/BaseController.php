@@ -21,7 +21,9 @@ class BaseController
         $viewFile   = __DIR__ . "/../views/{$view}.view.php";
 
         if (!file_exists($viewFile)) {
-            echo "<p>Vyn '{$view}' saknas.</p>";
+            require_once __DIR__ . '/../controllers/ErrorController.php';
+            (new ErrorController())->viewNotFound();
+            
             return;
         }
 
