@@ -30,9 +30,7 @@ To render a view, use the ``renderView` method. You can optionally pass data to 
 renderView(string $view, array $data = [], string $layout = 'app')
 ```
 
-**Example:**
-Rendering the homepage and passing a title variable to the view:
-
+**Rendering the homepage and passing a title variable to the view:**
 ```php
 $this->renderView('home/index', [
     'pageTitle' => 'Homepage'
@@ -133,7 +131,6 @@ The `isActive` function is perfect for dynamically highlighting the current page
 
 **Example Usage:**
 ```php
-<!-- Assuming $pageTitle is passed to the view from the controller -->
 <nav class="nav">
     <a class="nav-link <?= isActive($pageTitle, 'Översikt') ?>" href="/">
         Översikt
@@ -155,7 +152,7 @@ By default, every controller extending the base class inherits the following con
 
 **Under the hood:**
 ```php
-// app/core/Controller.php
+// app/core/BaseController.php
 public function __construct() {   
     date_default_timezone_set('Europe/Stockholm');
     setlocale(LC_TIME, 'sv_SE.UTF-8');

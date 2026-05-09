@@ -4,11 +4,8 @@ class BaseController
 {
 
     public function __construct() {   
-        
         date_default_timezone_set('Europe/Stockholm');
-
         setlocale(LC_TIME, 'sv_SE.UTF-8');
-
         mb_internal_encoding("UTF-8");
         
     }
