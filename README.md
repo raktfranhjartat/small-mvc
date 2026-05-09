@@ -15,7 +15,7 @@ small-mvc/
 │   ├───models      # Database models and data logic
 │   └───views       # HTML templates and views go here
 │       ├───home    # Views for the Home controller (e.g., index.php)
-│       ├───layout  # Layout wrappers (e.g., app.php)
+│       └───layout  # Layout wrappers (e.g., app.php)
 ├───config          # Configuration files (database, settings, etc.)
 └───public          # Document root, contains index.php and public assets
 ```
