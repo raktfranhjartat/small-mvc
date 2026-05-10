@@ -93,7 +93,7 @@ To keep your views clean and DRY (Don't Repeat Yourself), Small MVC supports reu
 **Function Signature:**
 ```php
 /**
- * @param string $name The name of the component file (without .view.php)
+ * @param string $name The name of the component file (without .component.php)
  * @param array  $data Variables to pass into the component
  */
 component(string $name, array $data = [])
@@ -102,9 +102,9 @@ component(string $name, array $data = [])
 **Example Usage:**
 
 **1. Create the component:** 
-Save your reusable HTML/PHP code in the components folder. For example, `app/components/button.view.php`:
+Save your reusable HTML/PHP code in the components folder. For example, `app/components/button.component.php`:
 ```php
-<!-- app/components/button.view.php -->
+<!-- app/components/button.component.php -->
 <button class="<?= $class ?? 'btn-default' ?>">
     <?= $text ?>
 </button>
