@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Core;
+
+use \ReflectionMethod;
+use App\Controllers\ErrorController;
+
 class Router
 {
     public function handleRequest(string $uri): void
@@ -12,7 +17,7 @@ class Router
         $controllerSegment = $segments[0] ?? 'home';
 
         
-        $controllerName = str_replace(
+        $shortControllerName = str_replace(
                 ' ',
                 '',
                 ucwords(str_replace('-', ' ', $controllerSegment))
@@ -22,14 +27,7 @@ class Router
         $params = array_slice($segments, 2);
         
 
-        $controllerFile = __DIR__ . '/../controllers/' . $controllerName . '.php';
-
-        if (!file_exists($controllerFile)) {
-            $this->notFound();
-            return;
-        }
-
-        require_once $controllerFile;
+        $controllerName = "\\App\\Controllers\\" . $shortControllerName;
 
         if (!class_exists($controllerName)) {
             $this->notFound();
@@ -56,7 +54,6 @@ class Router
 
     private function notFound(): void
     {
-        require_once __DIR__ . '/../controllers/ErrorController.php';
         (new ErrorController())->notFound();
     }
 }

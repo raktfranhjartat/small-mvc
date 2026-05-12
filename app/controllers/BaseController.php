@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Controllers\ErrorController;
+
 class BaseController
 {
 
@@ -18,7 +22,6 @@ class BaseController
         $viewFile   = __DIR__ . "/../views/{$view}.view.php";
 
         if (!file_exists($viewFile)) {
-            require_once __DIR__ . '/../controllers/ErrorController.php';
             (new ErrorController())->viewNotFound();
             
             return;
