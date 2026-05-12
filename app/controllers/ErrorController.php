@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+
 class ErrorController extends BaseController
 {
     public function notFound()

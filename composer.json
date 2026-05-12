@@ -1,0 +1,9 @@
+{
+    "name":"raktfranhjartat/small-mvc",
+    "description":"A lightweight zero-config MVC framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
